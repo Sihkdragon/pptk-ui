@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-display">
+    <div id="Container" class="flex flex-row">
+      <!-- SIDEBAR START -->
+      <div id="Sidebar" class="min-h-screen w-1/6 bg-mygray-1">
+        <div id="header" class="text-center text-white">
+          <img
+            src="img/logo.png"
+            alt=""
+            srcset=""
+            class="w-16 h-16 rounded-full mx-auto mt-8"
+          />
+          <h2 class="mt-2">Pusat Penelitian Teh dan Kina</h2>
+          <h2 class="">Gambung</h2>
+        </div>
+        <div id="body" class="mt-12 text-center font-bold text-white text-2xl">
+          <div
+            class="Navigation-Button border-y border-b-0 border-white py-3 hover:bg-slate-900 hover:cursor-pointer hover:text-slate-300"
+          >
+            Dashboard
+          </div>
+          <div
+            class="Navigation-Button border-y border-white py-3 hover:bg-slate-900 hover:cursor-pointer hover:text-slate-300"
+          >
+            Keluar - Masuk Teh
+          </div>
+        </div>
+      </div>
+      <!-- SIDEBAR END -->
+      <!-- MAIN SECTION START -->
+      <section id="MainSection" class="w-full min-h-screen">
+        <h1
+          id="title"
+          class="text-2xl font-bold text-center mt-10 text-mygray-1"
+        >
+          DASHBOARD
+        </h1>
+
+        <div class="myContainer w-3/4 mx-auto">
+          <!-- DATA BAR VIEW START -->
+          <div
+            id="DataContainer"
+            class="h-[200px] mx-auto flex mt-16 space-x-16"
+          >
+            <!-- DATA SECTION KELEMBABAN-->
+            <div
+              class="Data w-[260px] h-full rounded bg-mygreen-1 text-white text-center flex flex-col space-y-3 relative"
+            >
+              <h4 class="ValueName block mt-5 text-3xl">KELEMBABAN</h4>
+              <h4 class="Value block text-3xl font-bold">70</h4>
+              <h4 class="ValueUnit block text-3xl">RH</h4>
+              <div
+                class="DataStatus rounded-b-md bg-mygreen-2 absolute bottom-0 inset-x-0"
+              >
+                Safe
+              </div>
+            </div>
+            <!-- DATA SECTION -->
+            <!-- DATA SECTION KECEPATAN ROTASI-->
+            <div
+              class="Data w-[260px] h-full rounded bg-mybluelight-1 text-white text-center flex flex-col relative"
+            >
+              <h4 class="ValueName block mt-5 text-3xl">KECEPATAN ROTASI</h4>
+              <h4 class="Value block text-3xl font-bold">20</h4>
+              <h4 class="ValueUnit block text-3xl">RPM</h4>
+              <div
+                class="DataStatus rounded-b-md bg-mybluelight-2 absolute bottom-0 inset-x-0"
+              >
+                Safe
+              </div>
+            </div>
+            <!-- DATA SECTION KECEPATAN ROTASI-->
+            <!-- DATA SECTION BAHAN BAKAR-->
+            <div
+              class="Data w-[260px] h-full rounded bg-myblue-1 text-white text-center flex flex-col space-y-3 relative"
+            >
+              <h4 class="ValueName block mt-5 text-3xl">BAHAN BAKAR</h4>
+              <h4 class="Value block text-3xl font-bold">30</h4>
+              <h4 class="ValueUnit block text-3xl">Kg/jam</h4>
+              <div
+                class="DataStatus rounded-b-md bg-myblue-2 absolute bottom-0 inset-x-0"
+              >
+                Safe
+              </div>
+            </div>
+            <!-- DATA SECTION BAHAN BAKAR-->
+            <!-- DATA SECTION SUHU-->
+            <div
+              class="Data w-[260px] h-full rounded bg-myred-1 text-white text-center flex flex-col space-y-3 relative"
+            >
+              <h4 class="ValueName block mt-5 text-3xl">SUHU</h4>
+              <h4 class="Value block text-3xl font-bold">100</h4>
+              <h4 class="ValueUnit block text-3xl">&#176;C</h4>
+              <div
+                class="DataStatus rounded-b-md bg-myred-2 absolute bottom-0 inset-x-0"
+              >
+                Safe
+              </div>
+            </div>
+            <!-- DATA SECTION SUHU-->
+          </div>
+          <!-- DATA BAR VIEW END -->
+          <h1 class="TitleStatis text-2xl mt-10 text-mygray-1">Status</h1>
+          <div class="Form-Select-Diagram-Data mt-8">
+            <h3 class="text-2xl text-mygray-2">Periode</h3>
+            <label
+              for="inputperiode"
+              class="inputselect border w-1/3 h-9 rounded-lg text-mygray-2 mt-3 flex items-center justify-between"
+            >
+              <select
+                id="inputperiode"
+                name="Periode"
+                class="w-full h-full focus:outline-none block mx-2"
+              >
+                <option value="today">Hari ini</option>
+                <option value="tomorrow">Besok</option>
+                <option value="yesterday">Kemarin</option>
+              </select>
+            </label>
+          </div>
+          <canvas
+            id="myChart"
+            class="border border-4 mt-3"
+            width="1225"
+            height="400"
+          ></canvas>
+        </div>
+      </section>
+      <!-- MAIN SECTION END -->
+    </div>
+    <script src="../node_modules/chart.js/dist/chart.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
